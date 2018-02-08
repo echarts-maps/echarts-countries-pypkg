@@ -4,16 +4,7 @@ import sys
 import codecs
 from shutil import rmtree
 from setuptools import setup, find_packages, Command
-try:
-    from pyecharts_jupyter_installer import install_cmd_for
-except ImportError:
-    import pip
-    import importlib
-
-    pip.main(['install', 'echarts-countries-pypkg'])
-    install_cmd_for = importlib.import_module(
-        'echarts_countries_pypkg').install_cmd_for
-
+from platform import python_implementation
 PY2 = sys.version_info[0] == 2
 PY26 = PY2 and sys.version_info[1] < 7
 
@@ -26,7 +17,7 @@ DESCRIPTION = (
     'pyecharts map extensions - world countries - python package'
 )
 URL = 'https://github.com/pyecharts/echarts-countries-pypkg'
-DOWNLOAD_URL = '%s/archive/0.0.0.tar.gz' % URL
+DOWNLOAD_URL = '%s/archive/0.0.1.tar.gz' % URL
 FILES = ['README.rst',  'CHANGELOG.rst']
 KEYWORDS = [
     'python'
@@ -46,9 +37,6 @@ CLASSIFIERS = [
     'Programming Language :: Python :: 3.6',
 ]
 
-SETUP_COMMANDS = install_cmd_for(
-    'echarts-countries', 'echarts_countries_pypkg/resources')
-
 INSTALL_REQUIRES = [
 ]
 
@@ -58,8 +46,8 @@ EXTRAS_REQUIRE = {}
 # You do not need to read beyond this line
 PUBLISH_COMMAND = '{0} setup.py sdist bdist_wheel upload -r pypi'.format(
     sys.executable)
-GS_COMMAND = ('gs echarts-countries-pypkg v0.0.0 ' +
-              "Find 0.0.0 in changelog for more details")
+GS_COMMAND = ('gs echarts-countries-pypkg v0.0.1 ' +
+              "Find 0.0.1 in changelog for more details")
 NO_GS_MESSAGE = ('Automatic github release is disabled. ' +
                  'Please install gease to enable it.')
 UPLOAD_FAILED_MSG = (
@@ -102,11 +90,6 @@ class PublishCommand(Command):
                 self.status(UPLOAD_FAILED_MSG % PUBLISH_COMMAND)
 
         sys.exit()
-
-
-SETUP_COMMANDS.update({
-    'publish': PublishCommand,
-})
 
 
 def has_gease():
@@ -182,5 +165,7 @@ if __name__ == '__main__':
         include_package_data=True,
         zip_safe=False,
         classifiers=CLASSIFIERS,
-        cmdclass=SETUP_COMMANDS
+        cmdclass={
+            'publish': PublishCommand,
+        }
     )

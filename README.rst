@@ -16,6 +16,15 @@ Installation
 ================================================================================
 
 
+You can install echarts-countries-pypkg via pip:
+
+.. code-block:: bash
+
+    $ pip install echarts-countries-pypkg
+
+
+or clone it and install it:
+
 .. code-block:: bash
 
     $ git clone https://github.com/pyecharts/echarts-countries-pypkg.git

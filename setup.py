@@ -10,14 +10,14 @@ PY26 = PY2 and sys.version_info[1] < 7
 
 NAME = 'echarts-countries-pypkg'
 AUTHOR = 'C.W.'
-VERSION = '0.0.1'
+VERSION = '0.0.2'
 EMAIL = 'wangc_2011@hotmail.com'
 LICENSE = 'MIT'
 DESCRIPTION = (
     'pyecharts map extensions - world countries - python package'
 )
 URL = 'https://github.com/pyecharts/echarts-countries-pypkg'
-DOWNLOAD_URL = '%s/archive/0.0.1.tar.gz' % URL
+DOWNLOAD_URL = '%s/archive/0.0.2.tar.gz' % URL
 FILES = ['README.rst',  'CHANGELOG.rst']
 KEYWORDS = [
     'python'
@@ -46,8 +46,8 @@ EXTRAS_REQUIRE = {}
 # You do not need to read beyond this line
 PUBLISH_COMMAND = '{0} setup.py sdist bdist_wheel upload -r pypi'.format(
     sys.executable)
-GS_COMMAND = ('gs echarts-countries-pypkg v0.0.1 ' +
-              "Find 0.0.1 in changelog for more details")
+GS_COMMAND = ('gs echarts-countries-pypkg v0.0.2 ' +
+              "Find 0.0.2 in changelog for more details")
 NO_GS_MESSAGE = ('Automatic github release is disabled. ' +
                  'Please install gease to enable it.')
 UPLOAD_FAILED_MSG = (

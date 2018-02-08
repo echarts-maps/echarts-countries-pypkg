@@ -8,9 +8,9 @@ echarts-countries-pypkg
 .. image:: https://codecov.io/gh/pyecharts/echarts-countries-pypkg/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/pyecharts/echarts-countries-pypkg
 
-.. image:: https://readthedocs.org/projects/echarts-countries-pypkg/badge/?version=latest
-   :target: http://echarts-countries-pypkg.readthedocs.org/en/latest/
 
+The project packages `echarts-countries-js <https://github.com/pyecharts/echarts-countries-js>`_
+and distributes it via pypi. 
 
 Installation
 ================================================================================

@@ -1,1 +1,9 @@
 {% extends 'README.rst.jj2' %}
+
+{% block documentation_link %}
+{% endblock %}
+
+{% block features %}
+The project packages `echarts-countries-js <https://github.com/pyecharts/echarts-countries-js>`_
+and distributes it via pypi. 
+{% endblock %}

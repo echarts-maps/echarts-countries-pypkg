@@ -1,2 +1,4 @@
 include README.rst
 include CHANGELOG.rst
+include echarts_countries_pypkg/resources/echarts/*.js
+include echarts_countries_pypkg/resources/registry.json

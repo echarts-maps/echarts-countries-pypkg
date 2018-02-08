@@ -1,3 +1,4 @@
 [submodule "echarts_countries_pypkg/resources"]
 	path = echarts_countries_pypkg/resources
 	url = https://github.com/pyecharts/echarts-countries-js.git
+        branch = master

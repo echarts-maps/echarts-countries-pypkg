@@ -4,7 +4,15 @@ import sys
 import codecs
 from shutil import rmtree
 from setuptools import setup, find_packages, Command
-from platform import python_implementation
+try:
+    from pyecharts_jupyter_installer import install_cmd_for
+except ImportError:
+    import pip
+    import importlib
+
+    pip.main(['install', 'pyecharts-jupyter-installer'])
+    install_cmd_for = importlib.import_module(
+        'pyecharts_jupyter_installer').install_cmd_for
 PY2 = sys.version_info[0] == 2
 PY26 = PY2 and sys.version_info[1] < 7
 
@@ -39,6 +47,8 @@ CLASSIFIERS = [
 
 INSTALL_REQUIRES = [
 ]
+SETUP_COMMANDS = install_cmd_for(
+    'echarts-coutries-pypkg', 'echarts_countries_pypkg/resources')
 
 
 PACKAGES = find_packages(exclude=['ez_setup', 'examples', 'tests'])
@@ -90,6 +100,11 @@ class PublishCommand(Command):
                 self.status(UPLOAD_FAILED_MSG % PUBLISH_COMMAND)
 
         sys.exit()
+
+
+SETUP_COMMANDS.update({
+    'publish': PublishCommand,
+})
 
 
 def has_gease():
@@ -165,7 +180,5 @@ if __name__ == '__main__':
         include_package_data=True,
         zip_safe=False,
         classifiers=CLASSIFIERS,
-        cmdclass={
-            'publish': PublishCommand,
-        }
+        cmdclass=SETUP_COMMANDS
     )

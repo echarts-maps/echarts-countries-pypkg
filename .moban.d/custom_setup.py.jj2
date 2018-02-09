@@ -1,1 +1,19 @@
 {% extends "setup.py.jj2" %}
+
+{% block platform_block %}
+try:
+    from pyecharts_jupyter_installer import install_cmd_for
+except ImportError:
+    import pip
+    import importlib
+
+    pip.main(['install', 'pyecharts-jupyter-installer'])
+    install_cmd_for = importlib.import_module(
+        'pyecharts_jupyter_installer').install_cmd_for
+{% endblock %}
+
+{% block additional_setup_commands %}
+SETUP_COMMANDS = install_cmd_for(
+    'echarts-coutries-pypkg', 'echarts_countries_pypkg/resources')
+{% endblock %}
+

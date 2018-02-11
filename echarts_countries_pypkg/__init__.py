@@ -8,9 +8,9 @@ from pyecharts.js_extensions import JsExtension
 
 
 @PluginInfo('pyecharts_js_extension', tags=['map'])
-class JupyterEcharts(JsExtension):
+class Pypkg():
     def __init__(self):
         __package_path__ = os.path.dirname(__file__)
         __registry_json__ = os.path.join(
             __package_path__, "resources")
-        super(JupyterEcharts, self).__init__(__registry_json__)
+        self.js_extension = JsExtension.from_registry_path(__registry_json__)

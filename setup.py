@@ -18,7 +18,7 @@ PY26 = PY2 and sys.version_info[1] < 7
 
 NAME = 'echarts-countries-pypkg'
 AUTHOR = 'C.W.'
-VERSION = '0.0.3'
+VERSION = '0.0.4'
 EMAIL = 'wangc_2011@hotmail.com'
 LICENSE = 'MIT'
 DESCRIPTION = (
@@ -46,13 +46,15 @@ CLASSIFIERS = [
 ]
 
 INSTALL_REQUIRES = [
+    'lml == 0.0.2',
 ]
 SETUP_COMMANDS = install_cmd_for(
     'echarts-coutries-pypkg', 'echarts_countries_pypkg/resources')
 
 
 PACKAGES = find_packages(exclude=['ez_setup', 'examples', 'tests'])
-EXTRAS_REQUIRE = {}
+EXTRAS_REQUIRE = {
+}
 # You do not need to read beyond this line
 PUBLISH_COMMAND = '{0} setup.py sdist bdist_wheel upload -r pypi'.format(
     sys.executable)

@@ -14,6 +14,7 @@ except ImportError:
 
 {% block additional_setup_commands %}
 SETUP_COMMANDS = install_cmd_for(
-    'echarts-coutries-pypkg', 'echarts_countries_pypkg/resources')
+    'echarts-coutries-pypkg',
+    'echarts_countries_pypkg/resources/echarts-countries-js')
 {% endblock %}
 

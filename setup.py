@@ -26,7 +26,7 @@ DESCRIPTION = (
 )
 URL = 'https://github.com/pyecharts/echarts-countries-pypkg'
 DOWNLOAD_URL = '%s/archive/0.0.9.tar.gz' % URL
-FILES = ['README.rst',  'CHANGELOG.rst']
+FILES = ['README.rst', 'CHANGELOG.rst']
 KEYWORDS = [
     'python'
 ]
@@ -90,6 +90,7 @@ class PublishCommand(Command):
         try:
             self.status('Removing previous builds...')
             rmtree(os.path.join(HERE, 'dist'))
+            rmtree(os.path.join(HERE, 'build'))
         except OSError:
             pass
 
@@ -107,7 +108,7 @@ class PublishCommand(Command):
 
 
 SETUP_COMMANDS.update({
-    'publish': PublishCommand,
+    'publish': PublishCommand
 })
 
 

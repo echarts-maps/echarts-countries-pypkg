@@ -7,10 +7,11 @@ from setuptools import setup, find_packages, Command
 try:
     from pyecharts_jupyter_installer import install_cmd_for
 except ImportError:
-    import pip
+    import subprocess
     import importlib
 
-    pip.main(['install', 'pyecharts-jupyter-installer'])
+    subprocess.check_call([sys.executable, '-m',
+                           'pip', 'install', 'pyecharts-jupyter-installer'])
     install_cmd_for = importlib.import_module(
         'pyecharts_jupyter_installer').install_cmd_for
 PY2 = sys.version_info[0] == 2

@@ -16,8 +16,8 @@ master_doc = 'index'
 
 project = u'echarts-countries-pypkg'
 copyright = u'2018 pyecharts dev team'
-version = '0.1.3'
-release = '0.1.3'
+version = '0.1.4'
+release = '0.1.4'
 exclude_patterns = []
 pygments_style = 'sphinx'
 html_theme = 'default'

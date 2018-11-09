@@ -1,2 +1,2 @@
-lml==0.0.2
+lml>=0.0.6
 pyecharts-jupyter-installer==0.0.3

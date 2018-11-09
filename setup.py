@@ -1,9 +1,13 @@
-# Template by setupmobans
+#!/usr/bin/env python3
+
+# Template by pypi-mobans
 import os
 import sys
 import codecs
 from shutil import rmtree
-from setuptools import setup, find_packages, Command
+
+from setuptools import Command, setup, find_packages
+
 try:
     from pyecharts_jupyter_installer import install_cmd_for
 except ImportError:
@@ -19,22 +23,20 @@ PY26 = PY2 and sys.version_info[1] < 7
 
 NAME = 'echarts-countries-pypkg'
 AUTHOR = 'C.W.'
-VERSION = '0.1.4'
+VERSION = '0.1.5'
 EMAIL = 'wangc_2011@hotmail.com'
 LICENSE = 'MIT'
 DESCRIPTION = (
     'pyecharts map extensions - world countries - python package'
 )
 URL = 'https://github.com/pyecharts/echarts-countries-pypkg'
-DOWNLOAD_URL = '%s/archive/0.1.4.tar.gz' % URL
+DOWNLOAD_URL = '%s/archive/0.1.5.tar.gz' % URL
 FILES = ['README.rst', 'CHANGELOG.rst']
 KEYWORDS = [
-    'python'
+    'python',
 ]
 
 CLASSIFIERS = [
-    'Topic :: Office/Business',
-    'Topic :: Utilities',
     'Topic :: Software Development :: Libraries',
     'Programming Language :: Python',
     'Intended Audience :: Developers',
@@ -47,7 +49,7 @@ CLASSIFIERS = [
 ]
 
 INSTALL_REQUIRES = [
-    'lml==0.0.2',
+    'lml>=0.0.6',
     'pyecharts-jupyter-installer==0.0.3',
 ]
 SETUP_COMMANDS = install_cmd_for(
@@ -61,8 +63,8 @@ EXTRAS_REQUIRE = {
 # You do not need to read beyond this line
 PUBLISH_COMMAND = '{0} setup.py sdist upload -r pypi'.format(
     sys.executable)
-GS_COMMAND = ('gs echarts-countries-pypkg v0.1.4 ' +
-              "Find 0.1.4 in changelog for more details")
+GS_COMMAND = ('gs echarts-countries-pypkg v0.1.5 ' +
+              "Find 0.1.5 in changelog for more details")
 NO_GS_MESSAGE = ('Automatic github release is disabled. ' +
                  'Please install gease to enable it.')
 UPLOAD_FAILED_MSG = (
@@ -138,7 +140,8 @@ def read_files(*files):
 
 def read(afile):
     """Read a file into setup"""
-    with codecs.open(afile, 'r', 'utf-8') as opened_file:
+    the_relative_file = os.path.join(HERE, afile)
+    with codecs.open(the_relative_file, 'r', 'utf-8') as opened_file:
         content = filter_out_test_code(opened_file)
         content = "".join(list(content))
         return content

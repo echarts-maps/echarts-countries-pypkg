@@ -2,11 +2,12 @@
 echarts-countries-pypkg
 ================================================================================
 
-.. image:: https://api.travis-ci.org/pyecharts/echarts-countries-pypkg.svg?branch=master
+.. image:: https://api.travis-ci.org/pyecharts/echarts-countries-pypkg.svg
    :target: http://travis-ci.org/pyecharts/echarts-countries-pypkg
 
-.. image:: https://codecov.io/gh/pyecharts/echarts-countries-pypkg/branch/master/graph/badge.svg
-   :target: https://codecov.io/gh/pyecharts/echarts-countries-pypkg
+.. image:: https://codecov.io/github/pyecharts/echarts-countries-pypkg/coverage.png
+   :target: https://codecov.io/github/pyecharts/echarts-countries-pypkg
+
 
 
 The project packages `echarts-countries-js <https://github.com/pyecharts/echarts-countries-js>`_

@@ -4,6 +4,12 @@ releases:
 - changes:
   - action: Updated
     details:
+    - "use lml >= 0.0.6"
+  date: 09.11.2018
+  version: 0.1.5
+- changes:
+  - action: Updated
+    details:
     - "`pyecharts#492`: pip 10 compactibility problem"
   date: 26.04.2018
   version: 0.1.4

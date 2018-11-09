@@ -3,13 +3,13 @@ organisation: "pyecharts"
 author: "C.W."
 contact: "wangc_2011@hotmail.com"
 company: "pyecharts dev team"
-version: "0.1.5"
-current_version: "0.1.5"
-release: "0.1.5"
+version: "0.1.6"
+current_version: "0.1.6"
+release: "0.1.6"
 copyright_year: 2018
 license: MIT
 nowheel: true
 dependencies:
-  - lml>=0.0.6
+  - lml>=0.0.2
   - pyecharts-jupyter-installer==0.0.3
 description: "pyecharts map extensions - world countries - python package"
